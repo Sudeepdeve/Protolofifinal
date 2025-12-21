@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sudeep Lamichhane - Nepali Developer, Video Editor, and Tech Enthusiast">
-  <meta name="keywords" content="Sudeep Lamichhane, Nepali Developer, Protolofi, HTML CSS JavaScript">
-  <meta name="author" content="Sudeep Lamichhane">
-  <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/digital-marketing-95/64/79-512.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sudeep Lamichhane - Nepali Developer, Video Editor, and Tech Enthusiast" />
+  <meta name="keywords" content="Sudeep Lamichhane, Nepali Developer, Protolofi, HTML CSS JavaScript" />
+  <meta name="author" content="Sudeep Lamichhane" />
+  <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/digital-marketing-95/64/79-512.png" type="image/x-icon" />
   <title>Sudeep Lamichhane - Portfolio</title>
+
   <style>
     /* CSS Variables for consistent theming */
     :root {
@@ -21,6 +22,8 @@
       --dark-bg: #2c3e50;
       --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       --transition: all 0.3s ease;
+      /* hero image is a CSS variable so we can swap it at runtime if the file is missing */
+      --hero-image: url('images/62.jfif');
     }
 
     /* Base Styles */
@@ -43,7 +46,10 @@
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: 1rem;
@@ -213,10 +219,11 @@
       transition: var(--transition);
     }
 
-    /* Hero Section */
+    /* Hero Section
+       use the CSS variable --hero-image so JS can swap it to a fallback if needed */
     #hero {
       height: 100vh;
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/62.jfif') no-repeat center center/cover;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--hero-image) no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -306,7 +313,11 @@
     }
 
     @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
         transform: translateY(0) translateX(-50%);
       }
       40% {
@@ -380,7 +391,7 @@
       border-radius: 50%;
       border: 4px solid var(--primary);
       object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     /* Services Section */
@@ -526,7 +537,7 @@
     .gallery-item {
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: var(--transition);
       cursor: pointer;
     }
@@ -549,7 +560,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.9);
+      background: rgba(0, 0, 0, 0.9);
       display: none;
       justify-content: center;
       align-items: center;
@@ -565,7 +576,7 @@
       max-width: 90%;
       max-height: 90%;
       border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     }
 
     .lightbox-close {
@@ -593,7 +604,7 @@
       cursor: pointer;
       z-index: 2001;
       transition: var(--transition);
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       width: 50px;
       height: 50px;
       display: flex;
@@ -603,7 +614,7 @@
     }
 
     .lightbox-nav:hover {
-      background: rgba(0,0,0,0.8);
+      background: rgba(0, 0, 0, 0.8);
     }
 
     .lightbox-prev {
@@ -669,7 +680,7 @@
 
     .social-link:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       background: rgba(255, 255, 255, 0.3);
     }
 
@@ -780,7 +791,8 @@
       font-size: 1.3rem;
     }
 
-    .footer-column p, .footer-column a {
+    .footer-column p,
+    .footer-column a {
       color: rgba(255, 255, 255, 0.7);
       margin-bottom: 10px;
       display: block;
@@ -805,7 +817,7 @@
 
     .visitor-counter {
       margin-top: 20px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       padding: 10px 20px;
       border-radius: 5px;
       display: inline-block;
@@ -816,15 +828,15 @@
       .contact-wrapper {
         grid-template-columns: 1fr;
       }
-      
+
       .aboutme-box {
         flex-direction: column-reverse;
       }
-      
+
       .aboutme-image {
         padding: 40px 20px;
       }
-      
+
       .footer-content {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -875,27 +887,27 @@
         width: 70%;
         justify-content: center;
       }
-      
+
       .lightbox-nav {
         font-size: 30px;
         width: 40px;
         height: 40px;
       }
-      
+
       .lightbox-prev {
         left: 10px;
       }
-      
+
       .lightbox-next {
         right: 10px;
       }
-      
+
       .lightbox-close {
         top: 10px;
         right: 15px;
         font-size: 30px;
       }
-      
+
       .hero-btns {
         flex-direction: column;
         align-items: center;
@@ -906,16 +918,112 @@
       .gallery {
         grid-template-columns: 1fr;
       }
-      
+
       #hero h1 {
         font-size: 2rem;
       }
-      
+
       .hero-subtitle {
         font-size: 1.2rem;
       }
     }
   </style>
+
+  <!--
+    Image-fallback helpers:
+    - handleImgError(img) will attempt alternative extensions and finally set a placeholder
+    - resolveHero() will verify the hero image and try alternatives, otherwise set a placeholder background
+    These helpers are registered on window so onerror attributes in HTML can call them immediately.
+  -->
+  <script>
+    (function () {
+      // Attempt alternative extensions for a given image element, then fallback to placeholder
+      function tryAlternativeSrc(img) {
+        try {
+          var src = img.getAttribute('src') || '';
+          // If already placeholder, don't loop
+          if (!src || src.indexOf('via.placeholder.com') !== -1) return;
+          var tried = img.dataset.tried ? JSON.parse(img.dataset.tried) : [];
+          // compute base by removing the last extension (handles querystrings)
+          var base = src.replace(/(\.[^./?#]+)([?#].*)?$/, '');
+          // If replace didn't remove extension (no extension) keep base
+          if (base === src) {
+            // keep original base
+            base = src;
+          }
+          var exts = ['.jpg', '.jpeg', '.png', '.jfif', '.webp', '.svg', '.JPG', '.PNG', '.JPEG', '.JFIF'];
+          for (var i = 0; i < exts.length; i++) {
+            var candidate = base + exts[i];
+            if (tried.indexOf(candidate) === -1) {
+              tried.push(candidate);
+              img.dataset.tried = JSON.stringify(tried);
+              img.src = candidate;
+              return;
+            }
+          }
+          // final fallback
+          img.src = 'https://via.placeholder.com/800x500?text=Image+Not+Found';
+          img.alt = img.alt || 'Image not available';
+        } catch (e) {
+          // worst-case fallback
+          img.src = 'https://via.placeholder.com/800x500?text=Image+Not+Found';
+        }
+      }
+
+      // expose globally so inline onerror can call it
+      window.handleImgError = function (img) {
+        tryAlternativeSrc(img);
+      };
+
+      // Verify the hero background image and attempt alternatives if it 404s.
+      function resolveHero() {
+        var root = document.documentElement;
+        var heroVar = getComputedStyle(root).getPropertyValue('--hero-image').trim();
+        var urlMatch = heroVar.match(/url\((['"]?)(.*?)\1\)/);
+        var original = urlMatch ? urlMatch[2] : '';
+        if (!original) return;
+
+        // quick test load
+        var tester = new Image();
+        tester.onload = function () {
+          // load OK - do nothing
+        };
+        tester.onerror = function () {
+          // try alternate extensions for the hero file name
+          var base = original.replace(/(\.[^./?#]+)([?#].*)?$/, '');
+          var exts = ['.jpg', '.jpeg', '.png', '.jfif', '.webp', '.JPG', '.PNG'];
+          var found = false;
+
+          exts.forEach(function (ext) {
+            var candidate = base + ext;
+            var testImg = new Image();
+            testImg.onload = function () {
+              if (!found) {
+                found = true;
+                root.style.setProperty('--hero-image', "url('" + candidate + "')");
+              }
+            };
+            testImg.onerror = function () { /* continue */ };
+            testImg.src = candidate;
+          });
+
+          // if none of the alternatives respond within a short timeout, set a placeholder
+          setTimeout(function () {
+            var current = getComputedStyle(root).getPropertyValue('--hero-image') || '';
+            if (current.indexOf('via.placeholder.com') === -1 && !found) {
+              root.style.setProperty('--hero-image', "url('https://via.placeholder.com/1600x900?text=Hero+Image+Not+Found')");
+            }
+          }, 1000);
+        };
+        tester.src = original;
+      }
+
+      // Run hero resolver on window load so all resources are available
+      window.addEventListener('load', resolveHero);
+      // also expose for manual runs
+      window.resolveHero = resolveHero;
+    })();
+  </script>
 </head>
 
 <body>
@@ -955,7 +1063,7 @@
   <section id="hero">
     <div class="hero container">
       <div class="hero-content">
-   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>
+        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
         <div class="hero-btns">
           <a href="#about" class="btn">Learn More</a>
           <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -983,26 +1091,27 @@
 
               <h3>Who I Am</h3>
               <p>
-                I am a passionate and multi-talented individual who enjoys exploring both creative and technical fields. 
-                I have experience in video editing, science and electronics projects, animation making, graphic designing, 
-                and coding. I also love engaging in various online games, playing football, practicing karate, 
-                and participating in other physical activities. 
+                I am a passionate and multi-talented individual who enjoys exploring both creative and technical
+                fields. I have experience in video editing, science and electronics projects, animation making,
+                graphic designing, and coding. I also love engaging in various online games, playing football,
+                practicing karate, and participating in other physical activities.
               </p>
 
               <h3>My Journey</h3>
               <p>
-                Whether I'm on the football field, working on an electronics project, or experimenting with animations, 
-                I approach every challenge with dedication and enthusiasm. I believe in continuous learning and 
-                balancing academics with extracurricular activities. My curiosity drives me to improve every day, 
-                and my creativity helps me bring ideas to life.
+                Whether I'm on the football field, working on an electronics project, or experimenting with
+                animations, I approach every challenge with dedication and enthusiasm. I believe in continuous
+                learning and balancing academics with extracurricular activities. My curiosity drives me to
+                improve every day, and my creativity helps me bring ideas to life.
               </p>
             </div>
             <div class="aboutme-image">
-              <img src="images/99.png" alt="Sudeep Lamichhane" loading="lazy">
+              <!-- added onerror handler so missing profile image will try alternatives and fallback -->
+              <img src="images/99.png" alt="Sudeep Lamichhane" loading="lazy" onerror="handleImgError(this)" />
             </div>
           </div>
         </div>
-        
+
         <!-- Services Section -->
         <div class="services-section">
           <h2>Services I Provide</h2>
@@ -1034,7 +1143,7 @@
         <h2 class="section-title">My <span>Projects</span></h2>
         <div class="work-grid">
           <div class="work-card">
-            <img src="images/f1.png" alt="Listen Sudeep Project" loading="lazy">
+            <img src="images/f1.png" alt="Listen Sudeep Project" loading="lazy" onerror="handleImgError(this)" />
             <div class="work-info">
               <h3>Listen Sudeep</h3>
               <p>It is a music app with various feature you can also enjoy music from it.</p>
@@ -1043,7 +1152,7 @@
           </div>
 
           <div class="work-card">
-            <img src="images/f2.png" alt="Explore Sudeep Project" loading="lazy">
+            <img src="images/f2.png" alt="Explore Sudeep Project" loading="lazy" onerror="handleImgError(this)" />
             <div class="work-info">
               <h3>Explore Sudeep</h3>
               <p>It is a science website where you can learn science up to grade 10.</p>
@@ -1052,7 +1161,7 @@
           </div>
 
           <div class="work-card">
-            <img src="images/f3.png" alt="Helping Hands Project" loading="lazy">
+            <img src="images/f3.png" alt="Helping Hands Project" loading="lazy" onerror="handleImgError(this)" />
             <div class="work-info">
               <h3>Helping Hands</h3>
               <p>It is a website which was the part of Student quality circle in which our team analysis problem of school and totally eliminate it.</p>
@@ -1060,8 +1169,8 @@
             </div>
           </div>
 
-            <div class="work-card">
-            <img src="images/f6.png" alt="Helping Hands Project" loading="lazy">
+          <div class="work-card">
+            <img src="images/f6.png" alt="Smart Nepal Project" loading="lazy" onerror="handleImgError(this)" />
             <div class="work-info">
               <h3>Smart Nepal</h3>
               <p>It is a website which was made at Hackathon by our team 'Code Vengers' to tackle the problem of lack of coordination between federal and local goverment.</p>
@@ -1069,9 +1178,8 @@
             </div>
           </div>
 
-
           <div class="work-card">
-            <img src="images/f4.png" alt="Dashain And Tihar Project" loading="lazy">
+            <img src="images/f4.png" alt="Dashain And Tihar Project" loading="lazy" onerror="handleImgError(this)" />
             <div class="work-info">
               <h3>Dashain And Tihar</h3>
               <p>It is a complete website where a user can learn about dashain and tihar festival of Nepal.</p>
@@ -1090,7 +1198,7 @@
           <h1 class="section-title">Cer<span>ti</span>ficates</h1>
           <p><strong>"A certificate isn't proof, but without it, there's no proof."</strong></p>
         </div>
-        
+
         <div class="gallery" id="certificates-gallery">
           <!-- Certificate images will be added dynamically -->
         </div>
@@ -1103,7 +1211,7 @@
         <div class="projects-header">
           <h1 class="section-title">Recent <span>Photos</span></h1>
         </div>
-        
+
         <div class="gallery" id="photos-gallery">
           <!-- Photo images will be added dynamically -->
         </div>
@@ -1114,41 +1222,41 @@
     <section id="contact">
       <div class="container">
         <h1 class="section-title">Contact <span>Info</span></h1>
-        
+
         <div class="social-links">
           <a href="https://www.facebook.com/sudeeplamichhane.13/" target="_blank" class="social-link" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" class="icon"> Facebook
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" class="icon" /> Facebook
           </a>
           <a href="https://www.instagram.com/itz.sudeep_/" target="_blank" class="social-link" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" class="icon"> Instagram
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" class="icon" /> Instagram
           </a>
           <a href="https://github.com/Sudeepdeve" target="_blank" class="social-link" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="icon"> GitHub
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="icon" /> GitHub
           </a>
           <a href="https://wa.me/9779845533445" target="_blank" class="social-link" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon"> WhatsApp
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon" /> WhatsApp
           </a>
         </div>
-        
+
         <div class="contact-wrapper">
           <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d11809.374470756022!2d83.96435663413087!3d28.227094697022334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sen!2snp!4v1736050887582!5m2!1sen!2snp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-          
+
           <div class="contact-form">
             <h3>Send Me a Message</h3>
             <form id="contact-form" action="https://formspree.io/f/mpwgnopo" method="POST">
-              <input type="hidden" name="_subject" value="New message from portfolio!">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_next" value="index.html">
-              
+              <input type="hidden" name="_subject" value="New message from portfolio!" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value="index.html" />
+
               <div class="form-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required />
               </div>
               <div class="form-group">
                 <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required />
               </div>
               <div class="form-group">
                 <label for="message">Your Message</label>
@@ -1185,16 +1293,15 @@
           <p>sudeeplamichhane92@gmail.com</p>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
         <div class="visitor-counter">
           <h3>Visitor Count</h3>
           <!-- hitwebcounter Code START -->
           <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener">
-            <img src="https://hitwebcounter.com/counter/counter.php?page=21390944&style=0001&nbdigits=6&type=page&initCount=8004" title="Counter Widget" alt="Visit counter For Websites" border="0">
+            <img src="https://hitwebcounter.com/counter/counter.php?page=21390944&style=0001&nbdigits=6&type=page&initCount=8004" title="Counter Widget" alt="Visit counter For Websites" border="0" />
           </a>
         </div>
-      
       </div>
     </div>
   </footer>
@@ -1204,66 +1311,68 @@
     <span class="lightbox-close">&times;</span>
     <span class="lightbox-nav lightbox-prev">&#10094;</span>
     <span class="lightbox-nav lightbox-next">&#10095;</span>
-    <img class="lightbox-content" id="lightbox-img" src="" alt="">
+    <img class="lightbox-content" id="lightbox-img" src="" alt="" />
   </div>
 
   <!-- JavaScript -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Mobile Navigation Toggle
       const hamburger = document.querySelector('.hamburger');
       const navList = document.querySelector('.nav-list ul');
-      
-      hamburger.addEventListener('click', function() {
-        navList.classList.toggle('active');
-        hamburger.classList.toggle('active');
-      });
-      
+
+      if (hamburger) {
+        hamburger.addEventListener('click', function () {
+          navList.classList.toggle('active');
+          hamburger.classList.toggle('active');
+        });
+      }
+
       // Close mobile menu when clicking on a link
       document.querySelectorAll('.nav-list a').forEach(link => {
         link.addEventListener('click', () => {
-          navList.classList.remove('active');
-          hamburger.classList.remove('active');
+          if (navList) {
+            navList.classList.remove('active');
+          }
+          if (hamburger) {
+            hamburger.classList.remove('active');
+          }
         });
       });
-      
+
       // Lightbox functionality
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       const lightboxClose = document.querySelector('.lightbox-close');
       const lightboxPrev = document.querySelector('.lightbox-prev');
       const lightboxNext = document.querySelector('.lightbox-next');
-      
+
       // Sample data for certificates and photos (replace with your actual images)
       const certificates = [
         'images/b1.jpg',
-         'images/b3.jpg',
-          'images/b4.jpg',
-           'images/b22.jpg',
-            'images/b44.jpg',
-             'images/f1.jpg',
-             'images/d2.jpg',
-              'images/a1.jpg',
-               'images/a2.jpg',
-                'images/a3.jpg',
-               'images/d3.jpg',
-                'images/a4.jpg',
-                 'images/a5.jpg',
-                  'images/a6.jpg',
-                   'images/a7.png',
-
-                    'images/t13.jpg',
-                    'images/ac1.jpg',
-
-                    'images/f4.jpg',
-               'images/d4.jpg',
-                'images/a8.png',
-                 'images/a9.jpg',
-                  'images/d1.jpg',
-
-      
+        'images/b3.jpg',
+        'images/b4.jpg',
+        'images/b22.jpg',
+        'images/b44.jpg',
+        'images/f1.jpg',
+        'images/d2.jpg',
+        'images/a1.jpg',
+        'images/a2.jpg',
+        'images/a3.jpg',
+        'images/d3.jpg',
+        'images/a4.jpg',
+        'images/a5.jpg',
+        'images/a6.jpg',
+        'images/a7.png',
+        'images/t13.jpg',
+        'images/ac1.jpg',
+        'images/f4.jpg',
+        'images/d4.jpg',
+        'images/a8.png',
+        'images/a9.jpg',
+        'images/d1.jpg'
       ];
-      
+
       const photos = [
         'images/3.jpg',
         'images/5.jpg',
@@ -1271,40 +1380,38 @@
         'images/62.jfif',
         'images/99.png',
         'images/f2.jpg',
-         'images/f3.jpg',
+        'images/f3.jpg',
         'images/c1.jpg',
         'images/c2.jpg',
         'images/c3.jpg',
         'images/c4.jpg',
         'images/ed2.jpg',
         'images/ed1.png',
-          'images/cf1.jpeg',
-          'images/cf2.jpeg',
-          'images/cf3.jpeg',
-          'images/cf4.jpeg',
-           'images/cf5.jpeg',
+        'images/cf1.jpeg',
+        'images/cf2.jpeg',
+        'images/cf3.jpeg',
+        'images/cf4.jpeg',
+        'images/cf5.jpeg',
         'images/d5.jpg',
- 'images/am1.jpeg',
-         'images/am2.jpg',
-         'images/am3.jpg',
-         'images/am4.jpg',
-         'images/am5.jpg',
-         'images/am6.jpeg',
-         'images/am7.jpeg',
-         'images/am8.jpeg',
-         'images/am9.jpeg',
-         'images/am10.jpeg',
-         'images/am11.jpeg',
-         'images/am12.jpeg',
+        'images/am1.jpeg',
+        'images/am2.jpg',
+        'images/am3.jpg',
+        'images/am4.jpg',
+        'images/am5.jpg',
+        'images/am6.jpeg',
+        'images/am7.jpeg',
+        'images/am8.jpeg',
+        'images/am9.jpeg',
+        'images/am10.jpeg',
+        'images/am11.jpeg',
+        'images/am12.jpeg',
         'images/sq1.JPG',
-         'images/sq2.JPG',
-         'images/sq3.JPG',
-      
-       'images/sq4.jpg', 
-         'images/sq5.jpg', 
-         'images/sq6.jpg',
-         'images/sq7.jpg', 
-        
+        'images/sq2.JPG',
+        'images/sq3.JPG',
+        'images/sq4.jpg',
+        'images/sq5.jpg',
+        'images/sq6.jpg',
+        'images/sq7.jpg',
         'images/t1.jfif',
         'images/t2.jfif',
         'images/t2.jpg',
@@ -1318,37 +1425,47 @@
         'images/t10.jpg',
         'images/t11.jpg',
         'images/t12.jpg',
-      
-        'images/t14.jfif',
-
-
-        
-        
+        'images/t14.jfif'
       ];
-      
-      // Populate galleries
+
+      // Populate galleries — add onerror handlers so missing images attempt alternatives
       const certificatesGallery = document.getElementById('certificates-gallery');
       const photosGallery = document.getElementById('photos-gallery');
-      
+
       certificates.forEach((cert, index) => {
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
-        galleryItem.innerHTML = `<img src="${cert}" alt="Certificate ${index + 1}" loading="lazy">`;
+        const img = document.createElement('img');
+        img.src = cert;
+        img.alt = `Certificate ${index + 1}`;
+        img.loading = 'lazy';
+        img.onerror = function () {
+          // call global handler defined in head
+          if (window.handleImgError) window.handleImgError(this);
+        };
+        galleryItem.appendChild(img);
         galleryItem.addEventListener('click', () => openLightbox(certificates, index));
-        certificatesGallery.appendChild(galleryItem);
+        if (certificatesGallery) certificatesGallery.appendChild(galleryItem);
       });
-      
+
       photos.forEach((photo, index) => {
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
-        galleryItem.innerHTML = `<img src="${photo}" alt="Photo ${index + 1}" loading="lazy">`;
+        const img = document.createElement('img');
+        img.src = photo;
+        img.alt = `Photo ${index + 1}`;
+        img.loading = 'lazy';
+        img.onerror = function () {
+          if (window.handleImgError) window.handleImgError(this);
+        };
+        galleryItem.appendChild(img);
         galleryItem.addEventListener('click', () => openLightbox(photos, index));
-        photosGallery.appendChild(galleryItem);
+        if (photosGallery) photosGallery.appendChild(galleryItem);
       });
-      
+
       let currentImages = [];
       let currentIndex = 0;
-      
+
       function openLightbox(images, index) {
         currentImages = images;
         currentIndex = index;
@@ -1356,45 +1473,47 @@
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
       }
-      
+
       function closeLightbox() {
         lightbox.classList.remove('active');
         document.body.style.overflow = 'auto';
       }
-      
+
       function showPrevImage() {
         currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
         lightboxImg.src = currentImages[currentIndex];
       }
-      
+
       function showNextImage() {
         currentIndex = (currentIndex + 1) % currentImages.length;
         lightboxImg.src = currentImages[currentIndex];
       }
-      
+
       // Event listeners for lightbox
-      lightboxClose.addEventListener('click', closeLightbox);
-      lightboxPrev.addEventListener('click', showPrevImage);
-      lightboxNext.addEventListener('click', showNextImage);
-      
+      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+      if (lightboxPrev) lightboxPrev.addEventListener('click', showPrevImage);
+      if (lightboxNext) lightboxNext.addEventListener('click', showNextImage);
+
       // Close lightbox when clicking outside the image
-      lightbox.addEventListener('click', function(e) {
-        if (e.target === lightbox) {
-          closeLightbox();
-        }
-      });
-      
+      if (lightbox) {
+        lightbox.addEventListener('click', function (e) {
+          if (e.target === lightbox) {
+            closeLightbox();
+          }
+        });
+      }
+
       // Keyboard navigation for lightbox
-      document.addEventListener('keydown', function(e) {
-        if (lightbox.classList.contains('active')) {
+      document.addEventListener('keydown', function (e) {
+        if (lightbox && lightbox.classList.contains('active')) {
           if (e.key === 'Escape') closeLightbox();
           if (e.key === 'ArrowLeft') showPrevImage();
           if (e.key === 'ArrowRight') showNextImage();
         }
       });
-      
+
       // Header scroll effect
-      window.addEventListener('scroll', function() {
+      window.addEventListener('scroll', function () {
         const header = document.getElementById('header');
         if (window.scrollY > 100) {
           header.classList.add('scrolled');
@@ -1402,13 +1521,15 @@
           header.classList.remove('scrolled');
         }
       });
-      
+
       // Form submission
       const contactForm = document.getElementById('contact-form');
-      contactForm.addEventListener('submit', function(e) {
-        // FormSubmit will handle the submission
-        // You can add a loading state here if needed
-      });
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+          // FormSubmit will handle the submission
+          // You can add a loading state here if needed
+        });
+      }
     });
   </script>
 </body>
