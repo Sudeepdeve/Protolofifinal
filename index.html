@@ -1428,14 +1428,12 @@
         'images/t3.jfif',
         'images/t4.jfif',
         'images/t5.jpg',
-        
-         'images/se1.JPG',
-           'images/se2.JPG',
-            'images/se3.JPG',
-             'images/se4.JPG',
-              'images/se5.JPG',
-         'images/se6.JPG',
-        
+        'images/se1.jpg',
+        'images/se2.jpg',
+        'images/se3.jpg',
+        'images/se4.jpg',
+        'images/se5.jpg',
+        'images/se6.jpg',
         'images/t6.jfif',
         'images/t7.jfif',
         'images/t8.jfif',
@@ -1453,6 +1451,7 @@
       certificates.forEach((cert, index) => {
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
+        galleryItem.style.cursor = 'pointer';
         const img = document.createElement('img');
         img.src = cert;
         img.alt = `Certificate ${index + 1}`;
@@ -1462,13 +1461,17 @@
           if (window.handleImgError) window.handleImgError(this);
         };
         galleryItem.appendChild(img);
-        galleryItem.addEventListener('click', () => openLightbox(certificates, index));
+        galleryItem.addEventListener('click', () => {
+          console.log('Opening lightbox for certificate:', cert);
+          openLightbox(certificates, index);
+        });
         if (certificatesGallery) certificatesGallery.appendChild(galleryItem);
       });
 
       photos.forEach((photo, index) => {
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
+        galleryItem.style.cursor = 'pointer';
         const img = document.createElement('img');
         img.src = photo;
         img.alt = `Photo ${index + 1}`;
@@ -1477,7 +1480,10 @@
           if (window.handleImgError) window.handleImgError(this);
         };
         galleryItem.appendChild(img);
-        galleryItem.addEventListener('click', () => openLightbox(photos, index));
+        galleryItem.addEventListener('click', () => {
+          console.log('Opening lightbox for photo:', photo);
+          openLightbox(photos, index);
+        });
         if (photosGallery) photosGallery.appendChild(galleryItem);
       });
 
@@ -1485,11 +1491,16 @@
       let currentIndex = 0;
 
       function openLightbox(images, index) {
+        console.log('openLightbox called with', images.length, 'images, index:', index);
         currentImages = images;
         currentIndex = index;
-        lightboxImg.src = currentImages[currentIndex];
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        if (lightboxImg && currentImages[currentIndex]) {
+          lightboxImg.src = currentImages[currentIndex];
+          lightbox.classList.add('active');
+          lightbox.style.zIndex = '3000';
+          document.body.style.overflow = 'hidden';
+          console.log('Lightbox opened, displaying:', currentImages[currentIndex]);
+        }
       }
 
       function closeLightbox() {
@@ -1499,12 +1510,16 @@
 
       function showPrevImage() {
         currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-        lightboxImg.src = currentImages[currentIndex];
+        if (lightboxImg) {
+          lightboxImg.src = currentImages[currentIndex];
+        }
       }
 
       function showNextImage() {
         currentIndex = (currentIndex + 1) % currentImages.length;
-        lightboxImg.src = currentImages[currentIndex];
+        if (lightboxImg) {
+          lightboxImg.src = currentImages[currentIndex];
+        }
       }
 
       // Event listeners for lightbox
